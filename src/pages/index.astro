@@ -1,6 +1,5 @@
 ---
 import Featured from '../components/Featured.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import RecentWork from '../components/RecentWork.astro';
@@ -10,11 +9,8 @@ const title = 'Jim Cooke';
 
 <Layout {title}>
 	<Header />
-
 	<div id="main">
 		<Featured />
 		<RecentWork />
 	</div>
-
-	<Footer />
 </Layout>
