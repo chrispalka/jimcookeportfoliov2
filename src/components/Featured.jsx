@@ -1,4 +1,4 @@
-import VideoPlayer from './VideoPlayer.jsx';
+import Popup from './Popup.jsx';
 import featuredThumb from '../assets/thumbs/featuredthumb.png?url';
 import { useState } from 'react';
 
@@ -13,23 +13,24 @@ const Featured = () => {
 		setShowPlayer(!showPlayer);
 	};
 
+	const handleClosePopup = () => {
+		handleShowPlayer();
+	};
+
 	return (
 		<section id="one">
 			<header className="major">
 				<div className="featuredContainer">
-					{showPlayer ? (
-						<VideoPlayer id={824901138} />
-					) : (
-						<div
-							className="thumbContainer"
-							onClick={() => handleShowPlayer()}
-							onMouseEnter={() => handleShowBlur(true)}
-							onMouseLeave={() => handleShowBlur(false)}
-						>
-							<img className={showBlur ? `featuredThumb blur` : `featuredThumb`} src={featuredThumb} />
-							<div className={showBlur ? `featuredPlay icon solid fa-play` : `featuredPlayHidden`}></div>
-						</div>
-					)}
+					{showPlayer && <Popup id={824901138} handleClosePopup={handleClosePopup} />}
+					<div
+						className="thumbContainer"
+						onClick={() => handleShowPlayer()}
+						onMouseEnter={() => handleShowBlur(true)}
+						onMouseLeave={() => handleShowBlur(false)}
+					>
+						<img className={showBlur ? `featuredThumb blur` : `featuredThumb`} src={featuredThumb} />
+						<div className={showBlur ? `featuredPlay icon solid fa-play` : `featuredPlayHidden`}></div>
+					</div>
 					<h2>
 						Below you can find a few samples of my work
 						<br />
