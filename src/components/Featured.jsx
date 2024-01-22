@@ -13,7 +13,8 @@ const Featured = () => {
 		setShowPlayer(!showPlayer);
 	};
 
-	const handleClosePopup = () => {
+	const handleClosePopup = (target) => {
+		console.log(target);
 		handleShowPlayer();
 	};
 
